@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASLA Mobile Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e1e1e, #3a3a3a); /* رمادي غامق */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      color: #fff;
+      overflow: hidden;
+    }
+    /* خلفية متحركة */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 10%, transparent 10.01%);
+      background-size: 80px 80px;
+      animation: move 10s linear infinite;
+    }
+    @keyframes move {
+      0% { transform: translate(0,0); }
+      100% { transform: translate(80px,80px); }
+    }
+
+    img {
+      width: 250px; /* حجم اللوجو أكبر */
+      margin-bottom: 20px;
+      filter: drop-shadow(0 8px 15px rgba(0,0,0,0.4));
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+    img:hover {
+      transform: scale(1.08);
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 2;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 280px;
+      position: relative;
+      z-index: 2;
+    }
+    .links a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    .links a:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
+
+    .facebook { background: #1877f2; }
+    .tiktok { background: #000; }
+    .instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
+    .whatsapp { background: #25d366; }
+  </style>
+</head>
+<body>
+  <!-- اللوجو -->
+  <img src="wasla_logo.png" alt="WASLA Logo">
+
+  <!-- العنوان -->
+  <h1>WASLA MOBILE STORE</h1>
+
+  <!-- الروابط -->
+  <div class="links">
+    <a class="facebook" href="https://www.facebook.com/share/15Dg3W82R3E/" target="_blank">Facebook</a>
+    <a class="tiktok" href="https://www.tiktok.com/@wasla.mobile.store" target="_blank">TikTok</a>
+    <a class="instagram" href="https://www.instagram.com/wasla.mobile.store" target="_blank">Instagram</a>
+    <a class="whatsapp" href="https://chat.whatsapp.com/IyPjSarnBunLSfqXWu9ib2?mode=ems_copy_t" target="_blank">WhatsApp Group</a>
+  </div>
+
+  <!-- حركة 3D بسيطة بالماوس -->
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      const moveX = (e.clientX / window.innerWidth - 0.5) * 10;
+      const moveY = (e.clientY / window.innerHeight - 0.5) * 10;
+      document.body.style.transform = `rotateX(${moveY}deg) rotateY(${moveX}deg)`;
+    });
+  </script>
+</body>
+</html>
